@@ -22,3 +22,7 @@ Joshua Rose
 [^2]: Vim is a terminal-based modal text editor based off of Bill Joy's Vi.
 [^3]: FZF is a general-purpose command-line fuzzy finder.
 [^4]: VimTex is a plugin for Vim that allows me to live-reload most pdf viewers and run a LaTeX compiler when I save a file.
+
+---
+
+Note: apologies that this page looks like a wikapedia article; I'm trying to reduce the amount of link spam.
