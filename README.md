@@ -6,10 +6,13 @@
  * I am a hobbyist software developer from Sydney, Australia.
  * I have been programming for a few years.
 
-### My work
+
+<details><summary><h3>My work</h3></summary>
+
  * [personal](https://github.com/H4ppy-04?tab=repositories&q=&type=source&language=&sort=stargazers)
  * [collaborations](https://github.com/H4ppy-04?tab=repositories&q=&type=fork&language=&sort=stargazers)
 
+</details>
 
 
  <details><summary><h3>Interests and Workflow</h3></summary>
