@@ -11,6 +11,10 @@
  * [collaborations](https://github.com/H4ppy-04?tab=repositories&q=&type=fork&language=&sort=stargazers)
 
 
+
+ <details><summary><h3>Interests and Workflow</h3></summary>
+
+
 ## Intersts
  * [FOSS](https://freeopensourcesoftware.org//index.php/Main_Page)
  * Python and Rust
@@ -40,3 +44,6 @@
 ---
 
 Note: Apologies that this page looks like a wikapedia article; I'm trying to reduce the amount of link spam.
+
+
+</details>
