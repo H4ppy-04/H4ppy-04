@@ -7,6 +7,9 @@
  * I have been programming for a few years.
 
 
+<figure><embed src="https://wakatime.com/share/@H4ppy/f5308bca-d3e4-476b-a334-957f5d7c5d74.svg"></embed></figure>
+
+
 <details><summary><h3>My work</h3></summary>
 
  * [personal](https://github.com/H4ppy-04?tab=repositories&q=&type=source&language=&sort=stargazers)
