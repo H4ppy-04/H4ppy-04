@@ -6,8 +6,8 @@
  * I am a hobbyist software developer from Sydney, Australia.
  * I have been programming for a few years.
 
-
-<figure><embed src="https://wakatime.com/share/@H4ppy/f5308bca-d3e4-476b-a334-957f5d7c5d74.svg"></embed></figure>
+<h4>Languages I've used over the past week</h4>
+<img width="65%" src="https://wakatime.com/share/@H4ppy/565b253b-4e71-4dfb-acac-d7db7f3156db.svg"/>
 
 
 <details><summary><h3>My work</h3></summary>
