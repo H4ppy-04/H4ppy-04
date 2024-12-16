@@ -6,10 +6,6 @@
  * I am a hobbyist software developer from Sydney, Australia.
  * I have been programming for a few years.
 
-<h4>Languages I've used over the past week</h4>
-<img width="65%" src="https://wakatime.com/share/@H4ppy/565b253b-4e71-4dfb-acac-d7db7f3156db.svg"/>
-
-
 <details><summary><h3>My work</h3></summary>
 
  * [personal](https://github.com/H4ppy-04?tab=repositories&q=&type=source&language=&sort=stargazers)
