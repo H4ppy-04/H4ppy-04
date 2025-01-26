@@ -4,6 +4,7 @@
 - 💞️ I’m looking to collaborate on small projects
 - 📫 You can reach me at joshua (dot) rose (at) myyahoo (dot) com
 - 😄 Pronouns: He/Him
+- 🍀 Hobbies: I like to bushwalk and go exploring
 - ⚡ Fun fact: I can wiggle my ears
 
 <!---
