@@ -1,3 +1,8 @@
+> [!NOTE]
+> I will be away from Feb 3rd - Feb 7th
+
+---
+
 - 👋 Hi, I’m @H4ppy-04
 - 👀 I’m interested in AST theory and compilers
 - 🌱 I’m currently learning Haskell
