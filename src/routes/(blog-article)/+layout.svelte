@@ -1,13 +1,13 @@
 <script lang="ts">
-  import Header from '$lib/components/organisms/Header.svelte';
-  import Footer from '$lib/components/organisms/Footer.svelte';
-  import Tag from '$lib/components/atoms/Tag.svelte';
-  import dateformat from 'dateformat';
+  import Header from "$lib/components/organisms/Header.svelte";
+  import Footer from "$lib/components/organisms/Footer.svelte";
+  import Tag from "$lib/components/atoms/Tag.svelte";
+  import dateformat from "dateformat";
 
-  import { keywords, siteBaseUrl, title } from '$lib/data/meta';
-  import type { BlogPost } from '$lib/utils/types';
-  import RelatedPosts from '$lib/components/organisms/RelatedPosts.svelte';
-  import Image from '$lib/components/atoms/Image.svelte';
+  import { keywords, siteBaseUrl, title } from "$lib/data/meta";
+  import type { BlogPost } from "$lib/utils/types";
+  import RelatedPosts from "$lib/components/organisms/RelatedPosts.svelte";
+  import Image from "$lib/components/atoms/Image.svelte";
 
   export let data: { post: BlogPost };
   $: ({ post } = data);
@@ -26,7 +26,7 @@
 
 <svelte:head>
   {#if post}
-    <meta name="keywords" content={metaKeywords.join(', ')} />
+    <meta name="keywords" content={metaKeywords.join(", ")} />
 
     <meta name="description" content={post.excerpt} />
     <meta property="og:description" content={post.excerpt} />
@@ -38,8 +38,8 @@
     <meta name="twitter:title" content="{post.title} - {title}" />
 
     {#if post.coverImage}
-      <meta property="og:image" content="{siteBaseUrl}{post.coverImage}" />
-      <meta name="twitter:image" content="{siteBaseUrl}{post.coverImage}" />
+      <meta property="og:image" content="{siteBaseUrl}/{post.coverImage}" />
+      <meta name="twitter:image" content="{siteBaseUrl}/{post.coverImage}" />
     {/if}
   {/if}
 </svelte:head>
@@ -52,9 +52,13 @@
       <div class="header">
         {#if post}
           <h1>{post.title}</h1>
-          <div class="note">Published on {dateformat(post.date, 'UTC:dd mmmm yyyy')}</div>
+          <div class="note">
+            Published on {dateformat(post.date, "UTC:dd mmmm yyyy")}
+          </div>
           {#if post.updated}
-            <div class="note">Updated on {dateformat(post.updated, 'UTC:dd mmmm yyyy')}</div>
+            <div class="note">
+              Updated on {dateformat(post.updated, "UTC:dd mmmm yyyy")}
+            </div>
           {/if}
           {#if post.readingTime}
             <div class="note">{post.readingTime}</div>
@@ -89,7 +93,7 @@
 </div>
 
 <style lang="scss">
-  @import '$lib/scss/_mixins.scss';
+  @import "$lib/scss/_mixins.scss";
 
   .article-layout {
     --body-background-color: var(--color--post-page-background);
