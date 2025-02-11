@@ -11,6 +11,9 @@ const extensions = [".svelte", ".md"];
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
+    paths: {
+      base: "",
+    },
     adapter: adapter({
       pages: "build",
       assets: "static",
