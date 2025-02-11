@@ -1,26 +1,25 @@
-// import adapter from '@sveltejs/adapter-static';
-import adapter from "@sveltejs/adapter-static";
-import { vitePreprocess } from "@sveltejs/kit/vite";
-import { mdsvex } from "mdsvex";
-import rehypeExternalLinks from "rehype-external-links";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import adapter from '@sveltejs/adapter-static';
+import { vitePreprocess } from '@sveltejs/kit/vite';
+import { mdsvex } from 'mdsvex';
+import rehypeExternalLinks from 'rehype-external-links';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
-const extensions = [".svelte", ".md"];
+const extensions = ['.svelte', '.md'];
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
     paths: {
-      base: "",
+      base: '',
     },
     adapter: adapter({
-      pages: "build",
-      assets: "static",
-      fallback: "routes/+error.svelte",
+      pages: 'build',
+      assets: 'build',
+      fallback: null,
     }),
     prerender: {
-      handleHttpError: "warn",
+      handleHttpError: 'warn',
     },
   },
   preprocess: [
@@ -28,23 +27,22 @@ const config = {
     mdsvex({
       extensions: extensions,
       rehypePlugins: [
-        rehypeExternalLinks, // Adds 'target' and 'rel' to external links
-        rehypeSlug, // Adds 'id' attributes to Headings (h1,h2,etc)
+        rehypeExternalLinks,
+        rehypeSlug,
         [
           rehypeAutolinkHeadings,
           {
-            // Adds hyperlinks to the headings, requires rehypeSlug
-            behavior: "prepend",
+            behavior: 'prepend',
             properties: {
-              className: ["heading-link"],
-              title: "Permalink",
-              ariaHidden: "true",
+              className: ['heading-link'],
+              title: 'Permalink',
+              ariaHidden: 'true',
             },
             content: {
-              type: "element",
-              tagName: "span",
+              type: 'element',
+              tagName: 'span',
               properties: {},
-              children: [{ type: "text", value: "#" }],
+              children: [{ type: 'text', value: '#' }],
             },
           },
         ],
