@@ -1,18 +1,20 @@
 <script lang="ts">
-	import { HttpRegex } from '$lib/utils/regex';
+	import { HttpRegex } from "$lib/utils/regex";
 
 	export let additionalClass: string | undefined = undefined;
 
 	export let href: string | undefined = undefined;
 	const isExternalLink = !!href && HttpRegex.test(href);
-	export let target: '_self' | '_blank' = isExternalLink ? '_blank' : '_self';
-	export let rel = isExternalLink ? 'noopener noreferrer' : undefined;
+	export let target: "_self" | "_blank" = isExternalLink
+		? "_blank"
+		: "_self";
+	export let rel = isExternalLink ? "noopener noreferrer" : undefined;
 
-	$: tag = href ? 'a' : 'article';
+	$: tag = href ? "a" : "article";
 	$: linkProps = {
 		href,
 		target,
-		rel
+		rel,
 	};
 </script>
 
@@ -90,7 +92,7 @@
 		max-height: 350px;
 	}
 
-	:global(.card [slot='image']) {
+	:global(.card [slot="image"]) {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;

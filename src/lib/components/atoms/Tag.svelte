@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let color: 'primary' | 'secondary' = 'primary';
+	export let color: "primary" | "secondary" = "primary";
 </script>
 
 <div class="tag {color}">

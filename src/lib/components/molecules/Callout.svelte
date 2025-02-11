@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Alert from '$lib/icons/alert.svelte';
-	import Check from '$lib/icons/check.svelte';
-	import Info from '$lib/icons/info.svelte';
+	import Alert from "$lib/icons/alert.svelte";
+	import Check from "$lib/icons/check.svelte";
+	import Info from "$lib/icons/info.svelte";
 
 	export let type: string | undefined = undefined;
 </script>
@@ -9,11 +9,11 @@
 <div class="callout-block {type ?? ''}">
 	{#if type}
 		<div class="icon-wrapper">
-			{#if type == 'info'}
+			{#if type == "info"}
 				<Info />
-			{:else if type == 'warning' || type == 'error'}
+			{:else if type == "warning" || type == "error"}
 				<Alert />
-			{:else if type == 'success'}
+			{:else if type == "success"}
 				<Check />
 			{/if}
 		</div>

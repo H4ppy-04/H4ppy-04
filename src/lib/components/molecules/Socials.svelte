@@ -1,13 +1,18 @@
 <script>
-  import GitHubIcon from '$lib/icons/socials/github.svelte';
-  import LinkedInIcon from '$lib/icons/socials/linkedin.svelte';
-  import EmailIcon from '$lib/icons/socials/email.svelte';
-  import RssIcon from '$lib/icons/rss.svelte';
-  import MastodonIcon from '$lib/icons/socials/mastodon.svelte';
+  import GitHubIcon from "$lib/icons/socials/github.svelte";
+  import LinkedInIcon from "$lib/icons/socials/linkedin.svelte";
+  import EmailIcon from "$lib/icons/socials/email.svelte";
+  import RssIcon from "$lib/icons/rss.svelte";
+  import MastodonIcon from "$lib/icons/socials/mastodon.svelte";
 </script>
 
 <div class="socials">
-  <a href="rss.xml" target="_blank" rel="noopener noreferrer" title="Stay updated via RSS">
+  <a
+    href="rss.xml"
+    target="_blank"
+    rel="noopener noreferrer"
+    title="Stay updated via RSS"
+  >
     <RssIcon />
   </a>
   <a
@@ -45,7 +50,7 @@
 </div>
 
 <style lang="scss">
-  @import '../../scss/breakpoints.scss';
+  @import "../../scss/breakpoints.scss";
   .socials {
     display: flex;
     align-items: center;

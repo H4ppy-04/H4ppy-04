@@ -1,18 +1,18 @@
 <script lang="ts">
-	import '$lib/scss/global.scss';
-	import type { ComponentProps } from 'svelte';
-	import type { Hst } from '@histoire/plugin-svelte';
-	import SparklingHighlight from './SparklingHighlight.svelte';
-	import type { NoUndefinedField } from '$lib/utils/types';
+	import "$lib/scss/global.scss";
+	import type { ComponentProps } from "svelte";
+	import type { Hst } from "@histoire/plugin-svelte";
+	import SparklingHighlight from "./SparklingHighlight.svelte";
+	import type { NoUndefinedField } from "$lib/utils/types";
 
 	export let Hst: Hst;
 
 	let props: NoUndefinedField<ComponentProps<SparklingHighlight>> = {
-		color: 'default',
-		sparkleColor: 'default'
+		color: "default",
+		sparkleColor: "default",
 	};
 
-	let text = 'Sparkling Text';
+	let text = "Sparkling Text";
 </script>
 
 <Hst.Story title="Molecules/Sparkling Highlight">
@@ -21,12 +21,12 @@
 		<Hst.Select
 			bind:value={props.color}
 			title="color"
-			options={['default', 'primary', 'secondary']}
+			options={["default", "primary", "secondary"]}
 		/>
 		<Hst.Select
 			bind:value={props.sparkleColor}
 			title="sparkle color"
-			options={['default', 'primary', 'secondary']}
+			options={["default", "primary", "secondary"]}
 		/>
 	</svelte:fragment>
 

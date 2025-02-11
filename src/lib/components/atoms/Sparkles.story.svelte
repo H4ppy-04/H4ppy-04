@@ -1,15 +1,15 @@
 <script lang="ts">
-	import '$lib/scss/global.scss';
-	import type { ComponentProps } from 'svelte';
-	import type { Hst } from '@histoire/plugin-svelte';
-	import Sparkles from './Sparkles.svelte';
-	import type { NoUndefinedField } from '$lib/utils/types';
-	import Button from '$lib/components/atoms/Button.svelte';
+	import "$lib/scss/global.scss";
+	import type { ComponentProps } from "svelte";
+	import type { Hst } from "@histoire/plugin-svelte";
+	import Sparkles from "./Sparkles.svelte";
+	import type { NoUndefinedField } from "$lib/utils/types";
+	import Button from "$lib/components/atoms/Button.svelte";
 
 	export let Hst: Hst;
 
 	let props: NoUndefinedField<ComponentProps<Sparkles>> = {
-		color: 'default'
+		color: "default",
 	};
 </script>
 
@@ -18,7 +18,7 @@
 		<Hst.Select
 			bind:value={props.color}
 			title="color"
-			options={['default', 'primary', 'secondary']}
+			options={["default", "primary", "secondary"]}
 		/>
 	</svelte:fragment>
 

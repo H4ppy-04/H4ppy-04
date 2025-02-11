@@ -1,9 +1,9 @@
 <script>
-  import Header from '$lib/components/organisms/Header.svelte';
-  import Footer from '$lib/components/organisms/Footer.svelte';
+  import Header from "$lib/components/organisms/Header.svelte";
+  import Footer from "$lib/components/organisms/Footer.svelte";
 
-  import Button from '$lib/components/atoms/Button.svelte';
-  import Error from '$lib/icons/error.svelte';
+  import Button from "$lib/components/atoms/Button.svelte";
+  import Error from "$lib/icons/error.svelte";
 </script>
 
 <Header showBackground />
@@ -15,7 +15,9 @@
       <div class="svg-wrapper">
         <Error />
       </div>
-      <p style="margin-bottom: 20px;">This probably isn't what you were looking for...</p>
+      <p style="margin-bottom: 20px;">
+        This probably isn't what you were looking for...
+      </p>
       <p>
         <Button href="/">Back</Button>
       </p>

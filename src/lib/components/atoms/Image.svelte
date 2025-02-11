@@ -1,26 +1,26 @@
 <script lang="ts">
-	import { dev } from '$app/environment';
+	import { dev } from "$app/environment";
 
 	export let src: string;
 	export let alt: string;
 	export let fullBleed: boolean | undefined = undefined;
 
-	export let formats: string[] = ['png'];
+	export let formats: string[] = ["png"];
 	export let widths: string[] | undefined = undefined;
 
-	$: fileName = src.split('.')[0];
+	$: fileName = src.split(".")[0];
 
 	function buildSrcset() {
 		if (dev) return;
 
-		let srcset = '';
+		let srcset = "";
 
 		if (widths) {
 			for (let i = 0; i < widths.length; i++) {
 				srcset += `${fileName}-${widths[i]}.${formats[0]} ${widths[i]}w`;
 
 				if (i < widths.length - 1) {
-					srcset += ', ';
+					srcset += ", ";
 				}
 			}
 		} else {
@@ -28,7 +28,7 @@
 				srcset += `${fileName}.${formats[i]}`;
 
 				if (i < formats.length - 1) {
-					srcset += ', ';
+					srcset += ", ";
 				}
 			}
 		}
@@ -37,7 +37,14 @@
 	}
 </script>
 
-<img srcset={buildSrcset()} {src} {alt} loading="lazy" decoding="async" class:full-bleed={fullBleed} />
+<img
+	srcset={buildSrcset()}
+	{src}
+	{alt}
+	loading="lazy"
+	decoding="async"
+	class:full-bleed={fullBleed}
+/>
 
 <style lang="scss">
 	img {

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Card from '$lib/components/atoms/Card.svelte';
-	import Tag from '$lib/components/atoms/Tag.svelte';
-	import type { TagType } from '$lib/utils/types';
-	import Image from '../atoms/Image.svelte';
+	import Card from "$lib/components/atoms/Card.svelte";
+	import Tag from "$lib/components/atoms/Tag.svelte";
+	import type { TagType } from "$lib/utils/types";
+	import Image from "../atoms/Image.svelte";
 
 	export let name: string;
 	export let description: string;
@@ -12,7 +12,10 @@
 
 <Card additionalClass="feature-card">
 	<div class="image" slot="image">
-		<Image src={image} alt="Picture describing the {name} feature" />
+		<Image
+			src={image}
+			alt="Picture describing the {name} feature"
+		/>
 	</div>
 	<div class="content" slot="content">
 		<div class="title">

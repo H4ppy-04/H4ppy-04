@@ -1,18 +1,19 @@
 <script lang="ts">
-	import { theme } from '$lib/stores/theme';
+	import { theme } from "$lib/stores/theme";
 
 	function toggleTheme() {
-		if ($theme === 'auto') {
-			theme.set('light');
-		} else if ($theme === 'light') {
-			theme.set('dark');
+		if ($theme === "auto") {
+			theme.set("light");
+		} else if ($theme === "light") {
+			theme.set("dark");
 		} else {
-			theme.set('auto');
+			theme.set("auto");
 		}
 	}
 </script>
 
 <noscript>
+	<!-- Hide the theme toggle if JavaScript is disabled -->
 	<!-- Hide the theme toggle if JavaScript is disabled -->
 	<style>
 		.theme-toggle {
@@ -29,7 +30,13 @@
 >
 	<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
 		<mask id="moon">
-			<rect x="0" y="0" width="100%" height="100%" fill="white" />
+			<rect
+				x="0"
+				y="0"
+				width="100%"
+				height="100%"
+				fill="white"
+			/>
 			<circle cx="40" cy="8" r="11" fill="black" />
 		</mask>
 		<circle id="sun" cx="12" cy="12" r="11" mask="url(#moon)" />
@@ -69,7 +76,10 @@
 			#sun {
 				fill: var(--color--primary);
 				> * {
-					filter: drop-shadow(0px 0px 3px var(--color--primary));
+					filter: drop-shadow(
+						0px 0px 3px
+							var(--color--primary)
+					);
 				}
 			}
 
@@ -77,7 +87,10 @@
 				stroke: var(--color--primary);
 
 				line {
-					filter: drop-shadow(0px 0px 3px var(--color--primary));
+					filter: drop-shadow(
+						0px 0px 3px
+							var(--color--primary)
+					);
 				}
 			}
 		}
@@ -110,7 +123,8 @@
 		stroke: var(--color--text);
 		stroke-width: 2px;
 		transform-origin: center center;
-		transition: all 0.5s var(--ease-elastic-4), opacity var(--_opacity-dur) var(--ease-3);
+		transition: all 0.5s var(--ease-elastic-4),
+			opacity var(--_opacity-dur) var(--ease-3);
 	}
 
 	#moon > circle {
@@ -142,7 +156,7 @@
 		@include light-icon;
 	}
 
-	[data-theme='auto'] {
+	[data-theme="auto"] {
 		.label {
 			opacity: 1;
 			transform: scaleX(1);
@@ -158,11 +172,11 @@
 		}
 	}
 
-	[data-theme='light'] {
+	[data-theme="light"] {
 		@include light-icon;
 	}
 
-	[data-theme='dark'] {
+	[data-theme="dark"] {
 		@include dark-icon;
 	}
 </style>

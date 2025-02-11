@@ -1,36 +1,42 @@
 <script lang="ts">
-	import { HttpRegex } from '$lib/utils/regex';
+	import { HttpRegex } from "$lib/utils/regex";
 
-	export let color: 'primary' | 'secondary' = 'primary';
-	export let style: 'solid' | 'understated' | 'clear' = 'solid';
-	export let size: 'small' | 'medium' | 'large' = 'medium';
+	export let color: "primary" | "secondary" = "primary";
+	export let style: "solid" | "understated" | "clear" = "solid";
+	export let size: "small" | "medium" | "large" = "medium";
 	export let href: string | undefined = undefined;
 
 	export let additionalClass: string | undefined = undefined;
 
 	const isExternalLink = !!href && HttpRegex.test(href);
-	export let target: '_self' | '_blank' = isExternalLink ? '_blank' : '_self';
-	export let rel = isExternalLink ? 'noopener noreferrer' : undefined;
+	export let target: "_self" | "_blank" = isExternalLink
+		? "_blank"
+		: "_self";
+	export let rel = isExternalLink ? "noopener noreferrer" : undefined;
 
-	$: tag = href ? 'a' : 'button';
+	$: tag = href ? "a" : "button";
 	$: linkProps = {
 		href,
 		target,
-		rel
+		rel,
 	};
 </script>
 
 <svelte:element
 	this={tag}
 	{...linkProps}
-	class={['button', `style--${style}`, `size--${size}`, `color--${color}`, additionalClass].join(
-		' '
-	)}
+	class={[
+		"button",
+		`style--${style}`,
+		`size--${size}`,
+		`color--${color}`,
+		additionalClass,
+	].join(" ")}
 	data-sveltekit-preload-data
 	on:click
 	{...$$restProps}
 >
-	{#if $$slots['icon']}
+	{#if $$slots["icon"]}
 		<div class="icon">
 			<slot name="icon" />
 		</div>
@@ -68,12 +74,16 @@
 			&--primary {
 				--main-color: var(--color--primary-rgb);
 				--light-color: var(--color--primary-tint-rgb);
-				--contrast-color: var(--color--primary-contrast);
+				--contrast-color: var(
+					--color--primary-contrast
+				);
 			}
 			&--secondary {
 				--main-color: var(--color--secondary-rgb);
 				--light-color: var(--color--secondary-tint-rgb);
-				--contrast-color: var(--color--secondary-contrast);
+				--contrast-color: var(
+					--color--secondary-contrast
+				);
 			}
 		}
 
@@ -83,7 +93,8 @@
 				color: var(--contrast-color);
 
 				&:hover {
-					box-shadow: 0px 0px 1px 7px rgba(var(--main-color), 0.3);
+					box-shadow: 0px 0px 1px 7px
+						rgba(var(--main-color), 0.3);
 				}
 			}
 			&--understated {
@@ -91,7 +102,8 @@
 				color: rgb(var(--main-color));
 
 				&:hover {
-					box-shadow: 0px 0px 1px 7px rgba(var(--main-color), 0.3);
+					box-shadow: 0px 0px 1px 7px
+						rgba(var(--main-color), 0.3);
 				}
 			}
 			&--clear {
@@ -99,7 +111,9 @@
 				color: rgb(var(--main-color));
 
 				&:hover {
-					background-color: rgb(var(--light-color));
+					background-color: rgb(
+						var(--light-color)
+					);
 				}
 			}
 		}
