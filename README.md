@@ -1,33 +1,21 @@
-- 👋 Hi, I’m @H4ppy-04
-- 👀 I’m interested in AST theory and compilers
-- 🌱 I’m currently learning Haskell
-- 💞️ I’m looking to collaborate on small projects
-- 📫 You can reach me at joshua (dot) rose (at) myyahoo (dot) com
-- 😄 Pronouns: He/Him
-- ⚡ Fun fact: I can wiggle my ears
+# My Brain Dumps
 
-<!---
-H4ppy-04/H4ppy-04 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+This is the source code for my blog.
 
-📊 **Weekly development breakdown**
+It was built with a few goals in mind:
 
-<!--START_SECTION:waka-->
+- Responsive design: the website looks and behaves well on screens of all sizes;
+- Fast: it only loads what's needed for it to work;
+- Adaptive: it supports dark mode from most operating systems by default (desktop and mobile);
+- Pretty: have a pleasant design that is both accessible and pleasing to the eye.
 
-```txt
-From: 22 December 2024 - To: 29 December 2024
+I achieved this with the help of SvelteKit. There is almost no JavaScript running, and it actually works with JS disabled! While JS is awesome, it's important to know when it's not needed.
 
-Total Time: 15 hrs 56 mins
 
-Python         4 hrs 31 mins   ██████▓░░░░░░░░░░░░░░░░░░   27.29 %
-Lua            2 hrs 52 mins   ████▒░░░░░░░░░░░░░░░░░░░░   17.38 %
-OCaml          1 hr 19 mins    ██░░░░░░░░░░░░░░░░░░░░░░░   07.95 %
-C              1 hr 5 mins     █▓░░░░░░░░░░░░░░░░░░░░░░░   06.61 %
-Assembly       58 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   05.89 %
-C++            45 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   04.58 %
-Bash           38 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   03.87 %
-Other          38 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   03.85 %
-```
+# Image Optimization
 
-<!--END_SECTION:waka-->
+This website uses [image-transmutation](https://github.com/matfantinel/image-transmutation) to automatically optimize images used in the site. This means that even if non-optimal image formats (like lossless PNGs) are used, it will go over the images and convert images to WebP and AVIF, as long as the `<Image />` component instead of `<img />` is used. This is done on build, so it doesn't change anything when running the website locally.
+
+# Managing Posts
+
+All posts are Markdown files that are processed with [MDsveX](https://mdsvex.pngwn.io/) to allow using Svelte components inside them.
