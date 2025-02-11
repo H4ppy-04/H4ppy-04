@@ -2,7 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ 'docs' ]
+    branches:
+      - docs
 
 jobs:
   build_site:
@@ -10,6 +11,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      # If you're using pnpm, add this step then change the commands and cache key below to use `pnpm`
+      # - name: Install pnpm
+      #   uses: pnpm/action-setup@v3
+      #   with:
+      #     version: 8
 
       - name: Install Node.js
         uses: actions/setup-node@v4
@@ -20,26 +27,26 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: build
-        uses: actions/upload-pages-artifact@v3
+      - name: Build
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
-          run: npm run build
+        run: |
+          npm run build
+
+      - name: Upload Artifacts
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: "build/"
+          path: 'build/'
 
   deploy:
     needs: build_site
     runs-on: ubuntu-latest
-
     permissions:
       pages: write
       id-token: write
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Deploy
         id: deployment
