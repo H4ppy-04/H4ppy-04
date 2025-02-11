@@ -9,7 +9,7 @@
   <h1 class="hello">H4ppy's Brain Dumps</h1>
   <p class="intro">
     <span class="left">It's like a blog for my brain</span>
-    <span class="right">but its very random</span>
+    <span class="right">but it can be <i>very</i> random</span>
   </p>
   <!--
   <div class="ctas">
@@ -28,7 +28,7 @@
 </section>
 
 <style lang="scss">
-  @import '$lib/scss/breakpoints.scss';
+  @import "$lib/scss/breakpoints.scss";
 
   #hero {
     display: flex;
