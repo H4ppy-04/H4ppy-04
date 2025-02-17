@@ -18,23 +18,31 @@ tags:
 
 ## The Problem
 
-A lot of my workflow is terminal-based. My email client, text editor, music player, calendar and IRC client are all terminal applications. My family has a **shared calendar** wherein all the events that concern members of the family are stored. However, I'll frequently waste time doing something like this.
+A lot of my workflow is terminal-based. My email client, text editor, music
+player, calendar and IRC client are all terminal applications. My family has a
+**shared calendar** wherein all the events that concern members of the family
+are stored. However, I'll frequently waste time doing something like this.
 
 ### Open up my email
 
-I'll open up mutt to see if there have been any new events that are created. New events are forwarded to my inbox.
+I'll open up mutt to see if there have been any new events that are created.
+New events are forwarded to my inbox.
 
 ### Download and import a `.ics` file
 
-A convenient `.ics` file is always attached to any automatic event emails. I'll manually save and import these into [Khal](https://lostpackets.de/khal/).
+A convenient `.ics` file is always attached to any automatic event emails. I'll
+manually save and import these into [Khal](https://lostpackets.de/khal/).
 
----
 
-All this is very tedious. I needed to find some way to be able to automate this process. That's when I found out about [vdirsyncer](https://github.com/pimutils/vdirsyncer) - a program that automatically syncs your iCloud calendar events.
 
-## Configuring vsyncdir
+All this is very tedious. I needed to find some way to be able to automate this
+process. That's when I found out about
+[vdirsyncer](https://github.com/pimutils/vdirsyncer) - a program that
+automatically syncs your iCloud calendar events.
 
-I'd simply add a configuration file, telling *vsyncdir* a few important details.
+## Configuring Vsyncdir
+
+I'd simply add a configuration file, telling *Vsyncdir* a few important details.
 
  1. Where to fetch the events from.
  2. The calendar ID (since you can have multiple iCloud calendars).
@@ -70,10 +78,14 @@ password = "<ICLOUD PASSWORD>"
 
 ### Syncing remote data
 
-After a configuration file has been defined, we can actually start the synchronization process. It's a matter of just discovering the remote calendar identifier(s) and then following up by syncing the remote calendar data using *vdirsyncer*.
+After a configuration file has been defined, we can actually start the
+synchronization process. It's a matter of just discovering the remote calendar
+identifier(s) and then following up by syncing the remote calendar data using
+*Vdirsyncer*.
 
 <Callout type="warning">
-  Upon synchronising, you'll get a few warnings and errors when importing events. This is due to the experimental nature of `ics` file serialization.
+  Upon synchronising, you'll get a few warnings and errors when importing
+  events. This is due to the experimental nature of `ics` file serialization.
 </Callout>
 
 Discover and synchronize as follows.
@@ -86,9 +98,11 @@ vdirsyncer discover && vdirsyncer sync
 
 </CodeBlock>
 
-It may also be handy to have this linked up to a systemd process. For example, on my server, I have the following setup.
+It may also be handy to have this linked up to a Systemd process. For example,
+on my server, I have the following setup.
 
-I have a timer that is linked to the synchronization of common tasks such as reloading emails and calendar events:
+I have a timer that is linked to the synchronization of common tasks such as
+reloading emails and calendar events:
 
 
 <CodeBlock lang="systemd" filename="~/.config/systemd/user/sync.timer">
@@ -175,6 +189,7 @@ hand-holding. Here's what my Khal configuration looks like:
   ```
 </CodeBlock>
 
-Then once you open Khal you should be seeing the same events that are in your iCloud calendar. Here's what it looks like for me:
+Then once you open Khal you should be seeing the same events that are in your
+iCloud calendar. Here's what it looks like for me:
 
 <Image fullBleed src="/images/khal-screenshot.png" alt="Screenshot of khal with all the synchronized events from iCloud" />
